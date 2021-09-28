@@ -35,9 +35,3 @@ workflows:
             branches:
               only:
                 - develop
-          parameters:
-            app-name:
-              default: $HEROKU_APP_NAME_DEVELOP
-              description: |
-                Deploy to develop live app
-              type: string
