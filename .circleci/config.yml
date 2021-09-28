@@ -26,12 +26,18 @@ jobs:
 
 workflows:
   deploy_to_develop:
-    - jobs:
-        - build
-        - heroku/deploy-via-git:
-            parameters:
-              app-name:
-                default: $HEROKU_APP_NAME_DEVELOP
-                description: |
-                  Deploy to develop live app
-                type: string
+    jobs:
+      - build
+      - heroku/deploy-via-git:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - develop
+          parameters:
+            app-name:
+              default: $HEROKU_APP_NAME_DEVELOP
+              description: |
+                Deploy to develop live app
+              type: string
