@@ -36,3 +36,19 @@ workflows:
             branches:
               only:
                 - develop
+  deploy_to_staging:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - heroku/deploy-via-git:
+          app-name: ${HEROKU_APP_NAME_STAGING}
+          requires:
+            - build
+            - deploy_to_develop
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
