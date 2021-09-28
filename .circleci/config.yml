@@ -45,7 +45,7 @@ workflows:
       - heroku/deploy-via-git:
           app-name: ${HEROKU_APP_NAME_STAGING}
           requires:
-            - deploy_to_develop
+            - build
           filters:
             tags:
               only: /^v.*/
