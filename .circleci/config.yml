@@ -31,10 +31,6 @@ workflows:
         - heroku/deploy-via-git:
             requires:
               - build
-            filters:
-              branches:
-                only:
-                  - develop
             parameters:
               app-name:
                 default: $HEROKU_APP_NAME_DEVELOP
