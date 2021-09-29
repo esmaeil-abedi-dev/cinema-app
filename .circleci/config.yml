@@ -27,7 +27,11 @@ jobs:
 workflows:
   deploy_to_develop:
     jobs:
-      - build
+      - build:
+          filters:
+            branches:
+              only:
+                - develop
       - heroku/deploy-via-git:
           app-name: ${HEROKU_APP_NAME_DEVELOP}
           requires:
