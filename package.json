@@ -64,7 +64,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-sonarjs": "^0.9.1",
     "prettier": "^2.2.1",
     "stylelint": "^13.9.0",
     "stylelint-config-prettier": "^8.0.2",
