@@ -50,4 +50,5 @@ workflows:
             tags:
               only: /^v.*/
             branches:
-              only: staging
+              only:
+                - staging
