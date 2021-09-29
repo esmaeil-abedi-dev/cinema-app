@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React - Develop ENV v1
+          Learn React - Develop ENV v1 10:05
         </a>
       </header>
     </div>
