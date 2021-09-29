@@ -41,10 +41,10 @@ workflows:
       - build:
           filters:
             tags:
-              only: /.*/
+              only: /^v.*/
             branches:
-              only:
-                - staging
+              ignore: /.*/
+
       - heroku/deploy-via-git:
           app-name: ${HEROKU_APP_NAME_STAGING}
           requires:
@@ -53,5 +53,4 @@ workflows:
             tags:
               only: /^v.*/
             branches:
-              only:
-                - staging
+              ignore: /.*/
