@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React - Develop ENV v1 10:05
+          This is on on develop on 12.23 and after that merge to staging
         </a>
       </header>
     </div>
