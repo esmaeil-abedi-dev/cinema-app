@@ -42,6 +42,9 @@ workflows:
           filters:
             tags:
               only: /.*/
+            branches:
+              only:
+                - staging
       - heroku/deploy-via-git:
           app-name: ${HEROKU_APP_NAME_STAGING}
           requires:
