@@ -54,3 +54,25 @@ workflows:
               only: /^v.*/
             branches:
               ignore: /.*/
+  deploy_to_production:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
+      - hold:
+          type: approval
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
+      - heroku/deploy-via-git:
+        requires:
+          - hold
+        filters:
+          branches:
+            only:
+              - main
