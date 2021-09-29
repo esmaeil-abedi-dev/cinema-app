@@ -74,9 +74,9 @@ workflows:
               only:
                 - main
       - heroku/deploy-via-git:
-        requires:
-          - hold
-        filters:
-          branches:
-            only:
-              - main
+          requires:
+            - hold
+          filters:
+            branches:
+              only:
+                - main
